@@ -1,7 +1,10 @@
 const WebSocket = require('ws');
 var CREATE = require('./create.js');    //방이 만들어졌을 때 호출하는 클래스
+const express = require('express');
+const app = express();
+const server = require('http').createServer(app);
 
-const wss = new WebSocket.Server({port:8000}, () =>{            //소캣을 포트 8000번에 시작 시킨다.
+const wss = new WebSocket.Server({port:server}, () =>{            //소캣을 포트 8000번에 시작 시킨다.
     console.log('서버 시작');
 });
 //https://port-0-node-express-32updzt2alphxma2i.sel5.cloudtype.app
@@ -153,7 +156,7 @@ function leaveRoom(params)  //룸을 나갈경우
 }
 
 
-wss.on('listening', () =>{
+server.listen(8000, () =>{
     console.log('리스닝....');
 });
 
