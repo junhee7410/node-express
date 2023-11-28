@@ -4,7 +4,7 @@ var CREATE = require('./create.js');    //방이 만들어졌을 때 호출하�
 const wss = new WebSocket.Server({port:8000}, () =>{            //소캣을 포트 8000번에 시작 시킨다.
     console.log('서버 시작');
 });
-
+//https://port-0-node-express-32updzt2alphxma2i.sel5.cloudtype.app
 const userList = [];
 const maxClients = 5; //최대 접속 인원수
 let rooms = {};         //룸 배열
